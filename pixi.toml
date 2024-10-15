@@ -2,7 +2,7 @@
 name = "learn_influences"
 version = "0.1.0"
 description = "Add a short description here"
-authors = ["Etienne Tack <5456949+etiennetack@users.noreply.github.com>"]
+authors = ["Nobody <nobody@example.com>"]
 channels = ["conda-forge"]
 platforms = ["linux-64", "win-64"]
 
