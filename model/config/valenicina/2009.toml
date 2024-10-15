@@ -1,0 +1,159 @@
+name = 'SOSPADIS (Valenicina)'
+starting_date = '2009'
+validation_date = '2019'
+timezone = 'Pacific/Fiji'
+crs = 'EPSG: 3460'
+
+[timestep]
+length = 10
+unit = 'years'
+building_delta = 26
+
+[border]
+file = 'data/valenicina/features/border.geojson'
+
+[[agents]]
+class_name = 'Road'
+unique_id = "id"
+scheduled = false
+set_attributes = true
+[agents.files]
+1994 = 'data/valenicina/features/roads_2002.geojson' # starting point uses roads of 2002
+2002 = 'data/valenicina/features/roads_2002.geojson'
+2009 = 'data/valenicina/features/roads_2009.geojson'
+2019 = 'data/valenicina/features/roads_2019.geojson'
+
+[[agents]]
+class_name = 'Dwelling'
+unique_id = 'Id'
+scheduled = true
+set_attributes = false
+[agents.files]
+1994 = 'data/valenicina/features/buildings_1994.geojson'
+2002 = 'data/valenicina/features/buildings_2002.geojson'
+2009 = 'data/valenicina/features/buildings_2009.geojson'
+2019 = 'data/valenicina/features/buildings_2019.geojson'
+
+[[agents]]
+class_name = 'LandOwner'
+scheduled = true
+[[agents.individuals]]
+unique_id = 'LO'
+
+[[rasters]]
+name = 'topography'
+file = 'data/valenicina/features/dem_2019.tiff'
+undefined_value = -10000
+
+# Beware, all CSV share this loading settings
+[csv_options]
+sep = ';'
+decimal = ','
+skipfooter = 1 # Number of lines to skip at the bottom of the csv files
+
+[[factors]]
+name = 'age_male'
+index_column = 'Group'
+probabilities_column = 'Prob. Male'
+[factors.files]
+2007 = 'data/valenicina/factors/age_sex_2007.csv'
+2017 = 'data/valenicina/factors/age_sex_2017.csv'
+
+[[factors]]
+name = 'age_female'
+index_column = 'Group'
+probabilities_column = 'Prob. Female'
+[factors.files]
+2007 = 'data/valenicina/factors/age_sex_2007.csv'
+2017 = 'data/valenicina/factors/age_sex_2017.csv'
+
+[[factors]]
+name = 'birth'
+index_column = 'Group'
+probabilities_column = 'Prob'
+[factors.files]
+2017 = 'data/valenicina/factors/birth_2017.csv'
+
+[[factors]]
+name = 'death_male'
+index_column = 'Group'
+probabilities_column = 'Prob. Male'
+[factors.files]
+2017 = 'data/valenicina/factors/death_2017.csv'
+
+[[factors]]
+name = 'death_female'
+index_column = 'Group'
+probabilities_column = 'Prob. Female'
+[factors.files]
+2017 = 'data/valenicina/factors/death_2017.csv'
+
+[[factors]]
+name = 'building_preferences'
+index_column = 'Building preferences'
+probabilities_column = 'Prob'
+[factors.files]
+2019 = 'data/valenicina/factors/building_preferences_2019.csv'
+
+[[factors]]
+name = 'education_level'
+index_column = 'Education level'
+probabilities_column = 'Prob.'
+[factors.files]
+2019 = 'data/valenicina/factors/education_level_2019.csv'
+
+[[factors]]
+name = 'ethnicity'
+index_column = 'Ethnic group'
+probabilities_column = 'Prob.'
+[factors.files]
+2019 = 'data/valenicina/factors/ethnicity_2019.csv'
+
+[[factors]]
+name = 'house_acquisition'
+index_column = 'House Acquisition'
+probabilities_column = 'Prob.'
+[factors.files]
+2019 = 'data/valenicina/factors/house_acquisition_2019.csv'
+
+[[factors]]
+name = 'weekly_income'
+index_column = 'Weekly income'
+probabilities_column = 'Prob.'
+[factors.files]
+2019 = 'data/valenicina/factors/income_2019.csv'
+
+[[factors]]
+name = 'neighborhood_preferences'
+index_column = 'neighborhood preference'
+probabilities_column = 'Prob'
+[factors.files]
+2019 = 'data/valenicina/factors/neighborhood_preferences_2019.csv'
+
+[[factors]]
+name = 'province_origin'
+index_column = 'Province of origin'
+probabilities_column = 'Prob.'
+[factors.files]
+2019 = 'data/valenicina/factors/province_origin_2019.csv'
+
+[[factors]]
+name = 'religion'
+index_column = 'Relious group'
+probabilities_column = 'Prob.'
+[factors.files]
+2019 = 'data/valenicina/factors/religion_2019.csv'
+
+[[factors]]
+name = 'security_of_tenure'
+index_column = 'Preceived security of tenure'
+probabilities_column = 'Prob.'
+[factors.files]
+2019 = 'data/valenicina/factors/security_of_tenure_2019.csv'
+
+[[factors]]
+name = 'source_of_employment'
+index_column = 'Source'
+probabilities_column = 'Prob.'
+[factors.files]
+2019 = 'data/valenicina/factors/source_of_employment_2019.csv'
