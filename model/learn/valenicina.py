@@ -8,7 +8,7 @@ from multiants.logger import NoLogger
 from multiants.measures import GridDensity
 from multiants.influences.gradient import NoValidStartPoint
 
-from models.sospadis import Sospadis
+from models.valenicina import Valenicina
 from generation.dwelling_factory import ImpossibleBuild
 from .base import ProblemBase
 
@@ -100,7 +100,7 @@ class Problem(ProblemBase):
         """Run a simulation with the given parameters."""
         start = time()
 
-        model = Sospadis(load_config(self.config_path), NoLogger())
+        model = Valenicina(load_config(self.config_path), NoLogger())
 
         params = self.build_params(X)
         model.change_influences(params)

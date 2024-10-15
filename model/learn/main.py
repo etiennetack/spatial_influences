@@ -20,11 +20,11 @@ sys.path.append("./model")
 import learn.save_results as save_results
 from learn.base import MyOutput
 from learn.sn7 import Problem as SN7Problem
-from learn.sospadis import Problem as SospadisProblem
+from learn.valenicina import Problem as ValenicinaProblem
 
 
 MODELS = {
-    "sospadis": SospadisProblem,
+    "valenicina": ValenicinaProblem,
     "spacenet7": SN7Problem,
 }
 
@@ -114,7 +114,7 @@ def run_nsga_ii(
     default="kdd,chamfer_macro,density_max",
     help="Names of the measures to fit",
 )
-@click.option("--model", help="spacenet7 or sospadis")
+@click.option("--model", help="spacenet7 or valenicina")
 @click.option("--config", help="Simulation config file")
 def learn(
     nprocess,

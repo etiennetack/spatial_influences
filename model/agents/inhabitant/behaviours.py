@@ -47,9 +47,6 @@ class Settle(BehaviourRule):
     """Behaviour describing how agents settle"""
 
     def apply(self, agent, model):
-        # TODO: ajouter la structure familliale: document SOSPADIS Social Analysis v2 p.17
-        # TODO: et vérifier les sous
-        # TODO ajouter la possibilité de terrassement?
         if agent.get("age").value >= self.options["min_age"]:
             area_range = self.options["area_range"]
             desired_area = random.uniform(*area_range)

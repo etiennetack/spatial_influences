@@ -16,8 +16,8 @@ from multiants.config import load_config
 
 sys.path.append("./model")
 
-from models.sospadis import Sospadis
-from learn.sospadis import Problem as SospadisProblem
+from models.valenicina import Valenicina
+from learn.valenicina import Problem as ValenicinaProblem
 
 from models.sn7 import SN7
 from learn.sn7 import Problem as SN7Problem
@@ -25,7 +25,7 @@ from learn.sn7 import Problem as SN7Problem
 from agents.dwelling import Dwelling
 
 MODELS = {
-    "sospadis": (Sospadis, SospadisProblem),
+    "valenicina": (Valenicina, ValenicinaProblem),
     "spacenet7": (SN7, SN7Problem),
 }
 

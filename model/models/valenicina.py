@@ -6,10 +6,10 @@ from agents.landowner import LandOwner
 from agents.road import Road
 from agents.road.parametters import Category as RoadCategory
 
-__all__ = ["Sospadis"]
+__all__ = ["Valenicina"]
 
 
-class Sospadis(Model):
+class Valenicina(Model):
     AGENT_CLASSES = (LandOwner, Dwelling, Road)
 
     def post_init(self):
