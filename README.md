@@ -19,7 +19,24 @@ pixi install
 
 ## Run genetic algorithms
 
-1) Install pixi
+### Valenicina
+
+```bash
+# 1994--2002
+
+pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/CD/valenicina/1994_2002 --measures chamfer_macro,density_mean --model valenicina --config model/config/valenicina/1994.toml
+
+# 2002--2009
+
+pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/CD/valenicina/2002_2009 --measures chamfer_macro,density_mean --model valenicina --config model/config/valenicina/2002.toml
+
+# 2009--2019
+
+pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/CD/valenicina/2009_2019 --measures chamfer_macro,density_mean --model valenicina --config model/config/valenicina/2009.toml
+
+```
+
+### SpaceNet 7 Data
 
 ```bash
 # Cairo1
