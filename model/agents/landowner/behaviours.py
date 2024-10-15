@@ -1,6 +1,6 @@
 # coding: utf-8
 import random
-from multiants import BehaviourRule
+from abmlib import BehaviourRule
 
 
 class Immigration(BehaviourRule):

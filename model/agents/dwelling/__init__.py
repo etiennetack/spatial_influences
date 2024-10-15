@@ -1,6 +1,6 @@
 # coding: utf-8
 from collections import OrderedDict
-from multiants import GeoAgent
+from abmlib import GeoAgent
 from .parametters import (
     Shape,
     Employment,

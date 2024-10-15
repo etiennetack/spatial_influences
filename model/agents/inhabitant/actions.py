@@ -1,6 +1,6 @@
 # coding: utf-8
 from uuid import uuid4
-from multiants import Action
+from abmlib import Action
 from generation.dwelling_factory import DwellingFactory
 
 from agents.dwelling import Dwelling
@@ -26,9 +26,7 @@ class CreateBuilding(Action):
     def apply(self, agent, model, desired_area):
         dwelling_factory = DwellingFactory(model)
         house_shape = dwelling_factory.build(agent, desired_area)
-        dwelling_agent = Dwelling(
-            str(uuid4()), model, house_shape, model.config["crs"]
-        )
+        dwelling_agent = Dwelling(str(uuid4()), model, house_shape, model.config["crs"])
         model.add_agent(dwelling_agent, True)
         agent.set("house", dwelling_agent)
         # TODO: Ajouter dans les membres

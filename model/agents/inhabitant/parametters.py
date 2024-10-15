@@ -4,7 +4,7 @@ from typing import Tuple
 import random
 from enum import Enum
 from collections import namedtuple
-from multiants import Parametter
+from abmlib import Parametter
 import generation.ages as ages
 
 __all__ = [
@@ -33,11 +33,7 @@ class Gender(Parametter):
         if override is not None:
             return override
         else:
-            return (
-                Gender.Type.FEMALE
-                if random.random() < 0.5
-                else Gender.Type.MALE
-            )
+            return Gender.Type.FEMALE if random.random() < 0.5 else Gender.Type.MALE
 
 
 class Age(Parametter):
@@ -48,18 +44,14 @@ class Age(Parametter):
         # TODO: Décrire dans le document, quel document?
         # Get demographic factor in function of agent's gender
         age_factor = model.factors[
-            "age_male"
-            if agent.get("gender") == Gender.Type.MALE
-            else "age_female"
+            "age_male" if agent.get("gender") == Gender.Type.MALE else "age_female"
         ]
         # Get gemographic data for current date (year)
         age_data = age_factor.get_data(model.time.current.year)
 
         # Random pick an age group
         group = int(
-            age_factor.roulette_wheel(
-                age_data, index_range=(1, len(Age.GROUPS))
-            )
+            age_factor.roulette_wheel(age_data, index_range=(1, len(Age.GROUPS)))
         )
         # And then randomize the agent's age within this group
         age = ages.random(group, Age.GROUPS)

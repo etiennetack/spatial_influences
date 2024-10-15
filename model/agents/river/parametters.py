@@ -1,5 +1,5 @@
 # coding: utf-8
-from multiants import Parametter
+from abmlib import Parametter
 
 
 __all__ = [

@@ -6,7 +6,7 @@ import pymoo.core.problem as pymoo_problem
 from pymoo.util.display.multi import MultiObjectiveOutput
 from pymoo.util.display.column import Column
 
-from multiants.measures import (
+from abmlib.measures import (
     ChamferDistance,
     ChamferDistanceMacro,
     GridDensityDifference,

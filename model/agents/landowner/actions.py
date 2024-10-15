@@ -2,7 +2,7 @@
 from uuid import uuid4
 from agents.inhabitant import Inhabitant
 from agents.dwelling import Dwelling
-from multiants import Action
+from abmlib import Action
 from .parametters import AnnualSettlements
 from generation.dwelling_factory import DwellingFactory
 
@@ -58,15 +58,11 @@ class AskPermission(Action):
     """Ask permission to settle."""
 
     def apply(self, agent, model):
-        as_number, as_max, as_newcommer_months = agent.get(
-            "annual_settlements"
-        )
+        as_number, as_max, as_newcommer_months = agent.get("annual_settlements")
         permission = as_number < as_max
         if permission:
             agent.set(
                 "annual_settlements",
-                AnnualSettlements.Type(
-                    as_number + 1, as_max, as_newcommer_months
-                ),
+                AnnualSettlements.Type(as_number + 1, as_max, as_newcommer_months),
             )
         return permission

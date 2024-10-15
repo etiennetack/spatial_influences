@@ -1,6 +1,6 @@
-from multiants import Model
-from multiants.influences import SlopeInfluence, DistanceInfluenceGPD
-from multiants.influences.functions import make_attraction_repulsion, make_open_distance
+from abmlib import Model
+from abmlib.influences import SlopeInfluence, DistanceInfluenceGPD
+from abmlib.influences.functions import make_attraction_repulsion, make_open_distance
 from agents.dwelling import Dwelling
 from agents.landowner import LandOwner
 from agents.road import Road

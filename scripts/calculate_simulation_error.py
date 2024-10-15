@@ -12,10 +12,10 @@ from scipy.spatial import cKDTree
 
 sys.path.append(".")
 
-from multiants import Model, GeoAgent
-from multiants.logger import Logger, NoLogger
-from multiants.config import load_config
-from multiants.influences.gradient import NoValidStartPoint
+from abmlib import Model, GeoAgent
+from abmlib.logger import Logger, NoLogger
+from abmlib.config import load_config
+from abmlib.influences.gradient import NoValidStartPoint
 
 sys.path.append("./model")
 

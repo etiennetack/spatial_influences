@@ -1,6 +1,6 @@
 # coding: utf-8
 from collections import OrderedDict
-from multiants import Agent
+from abmlib import Agent
 from .parametters import Gender, Age, Status, House, Dead, Pregnancy
 from .behaviours import ExtendHouse, Settle
 from .actions import CreateBuilding, LeaveSettlement, HaveChild

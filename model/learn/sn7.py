@@ -3,10 +3,10 @@ import numpy as np
 from math import pi
 from time import time
 
-from multiants.config import load_config
-from multiants.logger import NoLogger
-from multiants.measures import GridDensity
-from multiants.influences.gradient import NoValidStartPoint
+from abmlib.config import load_config
+from abmlib.logger import NoLogger
+from abmlib.measures import GridDensity
+from abmlib.influences.gradient import NoValidStartPoint
 
 from models.sn7 import SN7
 from generation.dwelling_factory import ImpossibleBuild

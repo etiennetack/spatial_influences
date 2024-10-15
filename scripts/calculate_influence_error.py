@@ -10,9 +10,9 @@ from tqdm.contrib.concurrent import process_map
 
 sys.path.append(".")
 
-from multiants import Model
-from multiants.logger import Logger, NoLogger
-from multiants.config import load_config
+from abmlib import Model
+from abmlib.logger import Logger, NoLogger
+from abmlib.config import load_config
 
 sys.path.append("./model")
 

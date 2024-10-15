@@ -2,7 +2,7 @@
 import random
 from math import pi, copysign
 from shapely.geometry import Polygon
-from multiants.geometry import Vector2, shape_index, extract_points
+from abmlib.geometry import Vector2, shape_index, extract_points
 
 __all__ = ["ExtensionFactory"]
 

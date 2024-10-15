@@ -1,6 +1,6 @@
 # coding: utf-8
 from enum import Enum
-from multiants import Parametter
+from abmlib import Parametter
 
 __all__ = [
     "Category",
@@ -29,9 +29,7 @@ class Category(Parametter):
     def init(self, agent, model, override=None):
         if override is not None:
             try:
-                return next(
-                    (rtype for rtype in self.Type if rtype.value == override)
-                )
+                return next((rtype for rtype in self.Type if rtype.value == override))
             except StopIteration:
                 return None
         else:

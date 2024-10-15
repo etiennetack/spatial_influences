@@ -1,7 +1,7 @@
 # coding: utf-8
 import random
 from collections import namedtuple
-from multiants import Parametter
+from abmlib import Parametter
 
 
 class AnnualSettlements(Parametter):

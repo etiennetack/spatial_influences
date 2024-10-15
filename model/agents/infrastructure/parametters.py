@@ -1,6 +1,6 @@
 # coding: utf-8
 from enum import Enum
-from multiants import Parametter
+from abmlib import Parametter
 
 __all__ = ["Category"]
 

@@ -3,7 +3,7 @@ import sys
 
 sys.path.append(".")
 
-from multiants.cli import create_cli
+from abmlib.cli import create_cli
 from models.sn7 import SN7
 from models.valenicina import Valenicina
 

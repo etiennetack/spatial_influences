@@ -1,5 +1,5 @@
 # coding: utf-8
-"""MULTIANTS"""
+"""ABMLIB"""
 
 import datetime
 from .model import Model
@@ -14,7 +14,7 @@ __all__ = [
     "Action",
 ]
 
-__title__ = "multiants"
+__title__ = "abmlib"
 __version__ = "0.0.1"
 __license__ = "AGPL-3.0-only"
-__copyright__ = f"Copyright {datetime.date.today().year} Project MULTIANTS Team"
+__copyright__ = f"Copyright {datetime.date.today().year} Project Team"

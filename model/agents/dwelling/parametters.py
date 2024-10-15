@@ -6,11 +6,11 @@ from typing import Any, List, Dict
 from enum import Enum
 from random import randint
 from shapely.geometry import Polygon, MultiPolygon
-from multiants import Parametter
+from abmlib import Parametter
 from shapely import unary_union
 
 if TYPE_CHECKING:
-    from multiants import Model, GeoAgent, Agent
+    from abmlib import Model, GeoAgent, Agent
 
 
 class Members(Parametter):
@@ -24,9 +24,7 @@ class BuildingShape:
             self.extensions: Dict[int, List[Polygon]] = {}
             self.detached: Dict[int, List[Polygon]] = {}
         elif isinstance(geometry, MultiPolygon):
-            parts: List[Polygon] = list(
-                sorted(geometry.geoms, key=lambda p: p.area)
-            )
+            parts: List[Polygon] = list(sorted(geometry.geoms, key=lambda p: p.area))
             self.main: Polygon = parts[-1]
             self.extensions: Dict[int, List[Polygon]] = {}
             self.detached: Dict[int, List[Polygon]] = {date: parts[:-1]}
@@ -35,9 +33,7 @@ class BuildingShape:
                 f"This spatial data type not yet supported: {type(geometry)}"
             )
 
-    def get_extensions(
-        self, detached: Optional[bool] = False
-    ) -> List[Polygon]:
+    def get_extensions(self, detached: Optional[bool] = False) -> List[Polygon]:
         def get(shape_dict):
             res = []
             for date in shape_dict.values():

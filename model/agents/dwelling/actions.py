@@ -2,11 +2,11 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
 
-from multiants import Action
+from abmlib import Action
 from generation.extension_factory import ExtensionFactory
 
 if TYPE_CHECKING:
-    from multiants import Model, Agent
+    from abmlib import Model, Agent
 
 
 class MakeExtension(Action):
