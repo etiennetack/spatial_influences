@@ -1,0 +1,77 @@
+name = "SN7 L15-1296E-1198N_5184_3399_13"
+timezone = "Asia/Kuwait"
+crs = "EPSG:3857"
+starting_date = "2019-08"
+validation_date = "2019-09"
+[[agents]]
+class_name = "Dwelling"
+unique_id = "Id"
+scheduled = true
+set_attributes = false
+
+[agents.files]
+2018-01 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_01.geojson"
+2018-02 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_02.geojson"
+2018-03 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_03.geojson"
+2018-04 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_04.geojson"
+2018-05 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_05.geojson"
+2018-06 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_06.geojson"
+2018-07 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_07.geojson"
+2018-08 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_08.geojson"
+2018-09 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_09.geojson"
+2018-10 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_10.geojson"
+2018-11 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_11.geojson"
+2018-12 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2018_12.geojson"
+2019-01 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_01.geojson"
+2019-02 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_02.geojson"
+2019-03 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_03.geojson"
+2019-04 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_04.geojson"
+2019-05 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_05.geojson"
+2019-06 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_06.geojson"
+2019-07 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_07.geojson"
+2019-08 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_08.geojson"
+2019-09 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_09.geojson"
+2019-10 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_10.geojson"
+2019-11 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_11.geojson"
+2019-12 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2019_12.geojson"
+2020-01 = "data/sn7/L15-1296E-1198N_5184_3399_13/buildings/2020_01.geojson"
+[[agents]]
+class_name = "Road"
+unique_id = "index"
+scheduled = false
+set_attributes = true
+
+[agents.files]
+2024 = "data/sn7/L15-1296E-1198N_5184_3399_13/roads.gpkg"
+[[agents]]
+class_name = "LandOwner"
+scheduled = true
+[[agents.individuals]]
+unique_id = "LO"
+
+
+[[rasters]]
+name = "topography"
+file = "data/sn7/L15-1296E-1198N_5184_3399_13/dem.tif"
+undefined_value = -9999.0
+
+[[factors]]
+name = "weekly_income"
+index_column = "Weekly income"
+probabilities_column = "Prob."
+
+[factors.files]
+2019 = "data/valenicina/factors/income_2019.csv"
+
+[timestep]
+length = 1
+unit = "months"
+building_delta = 102
+
+[border]
+file = "data/sn7/L15-1296E-1198N_5184_3399_13/border.gpkg"
+
+[csv_options]
+sep = ";"
+decimal = ","
+skipfooter = 1

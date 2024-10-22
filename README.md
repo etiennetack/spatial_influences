@@ -70,4 +70,8 @@ pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/
 # Tripoli
 
 pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/CD/L15-1138E-1216N_4553_3325_13/all --measures chamfer_macro,density_mean --model spacenet7 --config model/config/sn7/L15-1138E-1216N_4553_3325_13/all.toml
+
+# Kuwait
+
+pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/CD/L15-1296E-1198N_5184_3399_13/all --measures chamfer_macro,density_mean --model spacenet7 --config model/config/sn7/L15-1296E-1198N_5184_3399_13/all.toml
 ```
