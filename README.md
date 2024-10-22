@@ -17,7 +17,7 @@ dependencies with:
 pixi install
 ```
 
-## Run genetic algorithms
+## Run Genetic Algorithms
 
 ### Valenicina
 
@@ -70,4 +70,31 @@ pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/
 # Kuwait
 
 pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/CD/L15-1296E-1198N_5184_3399_13/all --measures chamfer_macro,density_mean --model spacenet7 --config model/config/sn7/L15-1296E-1198N_5184_3399_13/all.toml
+```
+
+
+### Inputs / Outputs
+
+- All model inputs are described inside the configuration files (`model/config/...`)
+- At the end, the program exports the best solutions into `.parquet` files (readable with pandas as `DataFrames`)
+- The output files are placed in a subfolder named with the random seed used by the program
+
+Here is a truncated example for `X.parquet`, which contains the values of the learnt parameters:
+
+```
+|   | neighbours_l_min | neighbours_l_0 | neighbours_l_max | neighbours_w | ... | area_range_max |
+|---|------------------|----------------|------------------|--------------|-----|----------------|
+| 0 | 4.971014         | 85.943037      | 122.522782       | 0.040774     | ... | 37.171996      |
+| 1 | 1.768529         | 83.524637      | 120.104298       | 0.040537     | ... | 37.171961      |
+| 2 | 4.669140         | 85.623982      | 122.203518       | 0.048813     | ... | 32.911690      | 	
+```
+ 	 	
+`F.parquet` contains the associated values for each measure (fitness functions):
+
+```
+|   | chamfer_macro | density_mean |
+|---|---------------|--------------| 	
+| 0 | 435134.683511 | 10.285       |
+| 1 | 425704.464531 | 10.380       |
+| 2 | 433560.923462 | 10.365       |
 ```
