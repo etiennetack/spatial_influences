@@ -45,6 +45,10 @@ pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/
 
 # Cairo2
 
+pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/CD/L15-1204E-1202N_4816_3380_13/all --measures chamfer_macro,density_mean --model spacenet7 --config model/config/sn7/L15-1204E-1202N_4816_3380_13/all.toml
+
+# Cairo3
+
 pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/CD/L15-1204E-1204N_4819_3372_13/all --measures chamfer_macro,density_mean --model spacenet7 --config model/config/sn7/L15-1204E-1204N_4819_3372_13/all.toml
 
 # Kuwait
