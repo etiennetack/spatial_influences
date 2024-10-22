@@ -19,6 +19,22 @@ pixi install
 
 ## Run Genetic Algorithms
 
+```bash
+❯ pixi run learn --help
+Usage: main.py [OPTIONS]
+
+Options:
+  --nprocess INTEGER  The number of process for parallelisation
+  --nmaxgen INTEGER   The number of generations for the GA
+  --psize INTEGER     The size of the populations of each generation
+  --output TEXT       Path to the results save file
+  --seed INTEGER      Random seed
+  --measures TEXT     Names of the measures to fit
+  --model TEXT        spacenet7 or sospadis
+  --config TEXT       Simulation config file
+  --help              Show this message and exit.
+```
+
 ### Valenicina
 
 ```bash
@@ -71,7 +87,6 @@ pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/
 
 pixi run learn --nprocess <n_threads> --nmaxgen 300 --psize 50 --output results/CD/L15-1296E-1198N_5184_3399_13/all --measures chamfer_macro,density_mean --model spacenet7 --config model/config/sn7/L15-1296E-1198N_5184_3399_13/all.toml
 ```
-
 
 ### Inputs / Outputs
 
