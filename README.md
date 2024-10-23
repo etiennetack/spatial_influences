@@ -30,7 +30,7 @@ Options:
   --output TEXT       Path to the results save file
   --seed INTEGER      Random seed
   --measures TEXT     Names of the measures to fit
-  --model TEXT        spacenet7 or sospadis
+  --model TEXT        spacenet7 or valenicina
   --config TEXT       Simulation config file
   --help              Show this message and exit.
 ```
