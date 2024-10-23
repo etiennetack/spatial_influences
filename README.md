@@ -113,3 +113,55 @@ Here is a truncated example for `X.parquet`, which contains the values of the le
 | 1 | 425704.464531 | 10.380       |
 | 2 | 433560.923462 | 10.365       |
 ```
+
+## Compute Influence and Simulation Error
+
+- To compute the influence error concatenate every `X` and `F` horizontally
+- Then concatenate all of them into one `DataFrame` and save it
+
+```python
+from pathlib import Path
+import pandas as pd
+
+def read_results(basepath, measures, period):
+    exp_results = []
+
+    for dataset in (basepath / measures).iterdir():
+        if dataset.name == "combined.parquet":
+            continue
+        period_dir = dataset / period
+        if period_dir.exists():
+            for exp in period_dir.iterdir():
+                x = pd.read_parquet(exp / "X.parquet")
+                f = pd.read_parquet(exp / "F.parquet")
+                xf = pd.concat([x, f], axis=1)  # concat horizontally
+                xf["dataset"] = dataset
+                xf["exp"] = int(exp.name)
+                exp_results.append(xf)
+
+    # concat vertically
+    combined_df = pd.concat(exp_results).reset_index(drop=True)
+
+    return combined_df
+
+results_folder = "./results"
+results = read_results(results_folder, "CD", "all")
+results.to_parquet(results_folder / "combined.parquet")
+```
+Finally, you can use the `calculate_influence_error` script to compute the influence error:
+
+```bash
+pixi run python scripts/calculate_influence_error.py
+```
+Check and adjust these variables inside the script (at the end):
+- RESULTS_PATH: the path to the `combined.parquet` file
+- OUTPUT_PATH: a new file retaking the `combined.parquet` file content with a new column indicating the influence error
+- N_CPU: number of parallel processes to use
+
+For the simulation error take again the `combined.parquet` file and run this script: `calculate_simulation_error`:
+
+```bash
+pixi run python scripts/calculate_simulation_error.py
+```
+
+Check again the end of the script and adjust.
